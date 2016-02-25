@@ -25,5 +25,9 @@ data.combined <- rbind(data.1a, data.2a)
 
 lact.plot <- ggplot(data.combined, aes(x=HPLC, y=LACT01)) +
     geom_point(size = 4,shape = 21, fill = "cornflowerblue", col = "black") +
-    geom_abline(slope =  1, intercept = 0, lty=2, colour = "red")
+    geom_abline(slope =  1, intercept = 0, lty=2, colour = "red") +
+    labs(title = "LACT01 to SUGA03 Comparison\n", x = "HPLC Result, g/100mL", y = "LACT01 Result, g/100mL") +
+    theme_bw() +
+    theme(plot.title = element_text(size = 18))
 lact.plot
+ggsave("graphs/Lactose Comparison.png")
